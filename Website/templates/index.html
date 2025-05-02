@@ -1,0 +1,352 @@
+{% extends 'layout.html' %}
+
+{% block title %}AirGuide Technologies - Revolutionizing Airport Navigation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-6">
+                <h1 class="hero-title">Welcome to AirGuide</h1>
+                <p class="hero-text">The leading provider of AI-controlled drones for air traffic control. Our cutting-edge technology ensures safer and more efficient air traffic, giving our customers peace of mind and improved operations.</p>
+                <div class="hero-buttons">
+                    <a href="/product" class="btn btn-primary btn-lg me-3">Our Drone Systems</a>
+                    <a href="/contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Transforming Airport Operations</h2>
+            <p class="lead">Our innovative drone system enhances safety and efficiency in all weather conditions</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-lightbulb text-primary"></i>
+                    </div>
+                    <h3>Visibility Enhancement</h3>
+                    <p>High-intensity beacon lights guide aircraft safely through fog, rain, and low visibility conditions.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                    </div>
+                    <h3>Emergency Response</h3>
+                    <p>Specialized drones deploy instantly with fire-suppressant capabilities for rapid incident control.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-satellite text-primary"></i>
+                    </div>
+                    <h3>Advanced Navigation</h3>
+                    <p>Utilizing ADS-B transponders for precise aircraft tracking and positioning in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>How AirGuide Works</h2>
+            <p class="lead">Revolutionizing air traffic control with AI-powered drone technology</p>
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <p class="text-center mb-4">At AirGuide, we specialize in developing cutting-edge drones equipped with advanced AI technology for air traffic control purposes. Our goal is to completely change the industry by providing efficient and reliable solutions that greatly improve air traffic management. Based in Frisco, TX, our team is dedicated to creating safer and more efficient skies for all.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Drone Traffic Management</h3>
+                        <p class="card-text">Our autonomous air traffic drones perform the same roles as humans but more efficiently. These drones significantly increase the safety of airport ground traffic in low visibility operations, when pilots have the most trouble navigating taxiways, especially at larger airports.</p>
+                        <p class="card-text">A large central control unit on top of the air traffic control tower relays aircraft positions via radar. Using ADS-B transponders, our drones locate and move to specific aircraft around the airport. With powerful beacon lights, they hover safely in front of designated aircraft to guide them to their gates, reducing incidents due to poor visibility.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title">Emergency Response System</h3>
+                        <p class="card-text">Our emergency response variants, equipped with higher-capacity batteries, more powerful rotors, and nozzles to spray fire-suppressant foam, remain on standby 24/7 throughout the airport.</p>
+                        <p class="card-text">These drones deploy instantly when needed, acting as first responders to begin controlling emergency situations, while simultaneously notifying air traffic control supervisors and emergency response vehicles. Human intervention remains our failsafe, with supervisors on duty to ensure there are no issues with the drones themselves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/technology" class="btn btn-primary">Learn More About Our Technology</a>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Showcase -->
+<section class="technology-showcase py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='img/savior-1.png') }}" alt="AirGuide Drone" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2>AI-Controlled Drones</h2>
+                <p class="lead mb-4">Advanced unmanned aerial vehicles equipped with artificial intelligence technology</p>
+                <p class="mb-4">Our AI-powered drones are equipped with cutting-edge technology that allows them to fly autonomously and make intelligent decisions while adapting to all weather conditions. These advanced UAVs feature various sensors, cameras, and sophisticated systems that gather and process vast amounts of data in real-time.</p>
+                <div class="tech-features">
+                    <div class="d-flex mb-3">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Real-time Data Processing</h5>
+                            <p>Advanced algorithms for instant analysis and decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Adaptive Intelligence</h5>
+                            <p>Self-learning systems that improve with each operation.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                        </div>
+                        <div>
+                            <h5>Human Supervision Failsafe</h5>
+                            <p>Trained supervisors monitor operations 24/7 for maximum safety.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/technology" class="btn btn-primary mt-4">Explore Our Technology</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Benefits of AirGuide Drones</h2>
+            <p class="lead">Revolutionizing air traffic management with cutting-edge technology</p>
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="benefit-card text-center h-100">
+                    <div class="icon-wrapper-lg mx-auto mb-3">
+                        <i class="fas fa-plane-arrival text-primary"></i>
+                    </div>
+                    <h4>Reduced Congestion</h4>
+                    <p>Optimized traffic flow reduces bottlenecks and improves overall airport efficiency.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="benefit-card text-center h-100">
+                    <div class="icon-wrapper-lg mx-auto mb-3">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                    </div>
+                    <h4>Improved Safety</h4>
+                    <p>Enhanced visibility and rapid response capabilities minimize incidents and accidents.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="benefit-card text-center h-100">
+                    <div class="icon-wrapper-lg mx-auto mb-3">
+                        <i class="fas fa-comments text-primary"></i>
+                    </div>
+                    <h4>Enhanced Communication</h4>
+                    <p>Real-time data sharing between aircraft and control towers improves coordination.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="benefit-card text-center h-100">
+                    <div class="icon-wrapper-lg mx-auto mb-3">
+                        <i class="fas fa-chart-line text-primary"></i>
+                    </div>
+                    <h4>Real-time Analytics</h4>
+                    <p>Data-driven insights enable continuous improvement of air traffic management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Impact -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Enhancing Airport Safety</h2>
+            <p class="lead">Reducing controller error and improving traffic flow in challenging conditions</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="safety-content">
+                    <h3>Exponentially Improving Air Traffic Management</h3>
+                    <p class="mb-4">Our advanced drone systems significantly reduce the risk of incidents during low-visibility operations by providing clear visual guidance to pilots and emergency response capabilities.</p>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="stat-card">
+                                <h4>95%</h4>
+                                <p>Visibility improvement in fog conditions</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stat-card">
+                                <h4>60%</h4>
+                                <p>Reduction in weather-related delays</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stat-card">
+                                <h4>120s</h4>
+                                <p>Average emergency response time</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="stat-card">
+                                <h4>24/7</h4>
+                                <p>Continuous operation capability</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="/safety" class="btn btn-outline-primary">Learn More About Safety</a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1690313758173-729edb720708?auto=format&fit=crop&w=1200&q=80&brightness=120" alt="Air Traffic Control Tower" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-5 bg-light testimonial-section">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Trusted by Aviation Professionals</h2>
+            <p class="lead">What airport operators and pilots are saying about our drone systems</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% if testimonials %}
+                            {% for testimonial in testimonials %}
+                                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                    <div class="testimonial-card text-center">
+                                        <div class="quote-icon mb-3">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                        <p class="testimonial-text">"{{ testimonial.testimonial_text }}"</p>
+                                        <div class="testimonial-author">
+                                            <h5>{{ testimonial.name }}</h5>
+                                            <p>{{ testimonial.position }}, {{ testimonial.company }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="carousel-item active">
+                                <div class="testimonial-card text-center">
+                                    <div class="quote-icon mb-3">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p class="testimonial-text">"The AirGuide drone systems have transformed our operations during foggy conditions. What used to be our most challenging time is now business as usual."</p>
+                                    <div class="testimonial-author">
+                                        <h5>John Anderson</h5>
+                                        <p>Air Traffic Control Director, O'Hare International Airport</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card text-center">
+                                    <div class="quote-icon mb-3">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p class="testimonial-text">"As a pilot, having that bright beacon to follow during heavy fog gives me an added layer of confidence. It's like having another set of eyes guiding you safely."</p>
+                                    <div class="testimonial-author">
+                                        <h5>Captain Sarah Williams</h5>
+                                        <p>Commercial Airline Pilot, Delta Airlines</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card text-center">
+                                    <div class="quote-icon mb-3">
+                                        <i class="fas fa-quote-left"></i>
+                                    </div>
+                                    <p class="testimonial-text">"The emergency response drones have cut our initial response time by half. In airport emergencies, those first minutes are critical."</p>
+                                    <div class="testimonial-author">
+                                        <h5>Michael Chen</h5>
+                                        <p>Chief of Airport Safety, Heathrow Airport</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cta-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mb-4 mb-lg-0">
+                            <h2 class="mb-3">Ready to transform your airport operations?</h2>
+                            <p class="lead mb-0">Discover how our AI-powered drone systems can improve safety and efficiency at your facility.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

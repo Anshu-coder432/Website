@@ -1,0 +1,386 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contact Us | AirGuide Technologies{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="page-hero contact-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <h1>Contact Us</h1>
+                <p class="lead">Reach out to our team for more information</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="section-intro text-center mb-5">
+                    <h2>Get in Touch</h2>
+                    <p class="lead">We're ready to discuss how AirGuide Technologies can enhance your airport operations</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="contact-card text-center">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                            </div>
+                            <h4>Headquarters</h4>
+                            <p>1234 Aviation Drive<br>Suite 500<br>San Francisco, CA 94111<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-card text-center">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-phone-alt fa-2x text-primary"></i>
+                            </div>
+                            <h4>Phone</h4>
+                            <p>Main: +1 (555) 123-4567<br>Support: +1 (555) 987-6543<br>International: +44 20 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-card text-center">
+                            <div class="contact-icon mb-3">
+                                <i class="fas fa-envelope fa-2x text-primary"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <p>General Inquiries:<br>info@airguidetech.com<br>Support:<br>support@airguidetech.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="contact-form-container">
+                    <div class="row">
+                        <div class="col-lg-5 mb-4 mb-lg-0">
+                            <div class="contact-info">
+                                <h3>How can we help?</h3>
+                                <p class="mb-4">Please fill out the form with your inquiry, and a member of our team will get back to you as soon as possible.</p>
+                                
+                                <h5 class="mb-3">Specialized Support</h5>
+                                <div class="specialized-contacts mb-4">
+                                    <div class="specialized-contact mb-3">
+                                        <span class="contact-label">Technical Support:</span>
+                                        <span class="contact-value">technical@airguidetech.com</span>
+                                    </div>
+                                    <div class="specialized-contact mb-3">
+                                        <span class="contact-label">Sales Inquiries:</span>
+                                        <span class="contact-value">sales@airguidetech.com</span>
+                                    </div>
+                                    <div class="specialized-contact mb-3">
+                                        <span class="contact-label">Media Relations:</span>
+                                        <span class="contact-value">media@airguidetech.com</span>
+                                    </div>
+                                </div>
+                                
+                                <h5 class="mb-3">Office Hours</h5>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM (PST)<br>Saturday: 9:00 AM - 1:00 PM (PST)<br>Sunday: Closed</p>
+                                
+                                <div class="social-links mt-4">
+                                    <a href="#" class="social-link me-3"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link me-3"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link me-3"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="contact-form">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                                {{ message }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                                
+                                <form id="contactForm" method="POST" action="{{ url_for('contact') }}">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">First Name*</label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Last Name*</label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="email" class="form-label">Email Address*</label>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phone" class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="company" class="form-label">Company/Organization</label>
+                                            <input type="text" class="form-control" id="company" name="company">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="inquiry" class="form-label">Inquiry Type*</label>
+                                            <select class="form-select" id="inquiry" name="inquiry" required>
+                                                <option value="" selected disabled>Please select</option>
+                                                <option value="product">Product Information</option>
+                                                <option value="demo">Request a Demo</option>
+                                                <option value="quote">Request a Quote</option>
+                                                <option value="support">Technical Support</option>
+                                                <option value="partnership">Partnership Opportunities</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="message" class="form-label">Message*</label>
+                                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                                                <label class="form-check-label" for="privacyPolicy">
+                                                    I agree to the processing of my personal data in accordance with AirGuide's <a href="#">Privacy Policy</a>.*
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Global Offices -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Our Global Offices</h2>
+            <p class="lead">Visit us at any of our worldwide locations</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>San Francisco</h4>
+                    <p class="office-address">1234 Aviation Drive<br>Suite 500<br>San Francisco, CA 94111<br>United States</p>
+                    <p class="office-contact">+1 (555) 123-4567<br>americas@airguidetech.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>London</h4>
+                    <p class="office-address">45 Aviation House<br>Heathrow Airport<br>Hounslow, TW6 2GW<br>United Kingdom</p>
+                    <p class="office-contact">+44 20 1234 5678<br>europe@airguidetech.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>Singapore</h4>
+                    <p class="office-address">78 Changi North Way<br>#08-125<br>Singapore 498704</p>
+                    <p class="office-contact">+65 6123 4567<br>asia@airguidetech.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>Dubai</h4>
+                    <p class="office-address">Dubai Airport Free Zone<br>Building 6E, Block A<br>Dubai, UAE</p>
+                    <p class="office-contact">+971 4 123 4567<br>middleeast@airguidetech.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>Tokyo</h4>
+                    <p class="office-address">Haneda Airport Building<br>3-3-2 Haneda Airport<br>Ota City, Tokyo 144-0041<br>Japan</p>
+                    <p class="office-contact">+81 3 1234 5678<br>japan@airguidetech.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="office-card">
+                    <h4>São Paulo</h4>
+                    <p class="office-address">Av. Washington Luis, 7000<br>Campo Belo<br>São Paulo, SP 04626-000<br>Brazil</p>
+                    <p class="office-contact">+55 11 1234 5678<br>latam@airguidetech.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Frequently Asked Questions</h2>
+            <p class="lead">Quick answers to common inquiries</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How Do Your Drones Improve Air Traffic Control?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our drones utilize advanced sensors and AI to monitor airspace, optimize routes, and enhance real-time communication between aircraft and control towers.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What Types Of Drones Do You Offer?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We offer a range of drones designed specifically for air traffic monitoring, data collection, and communication enhancements, ensuring safety and efficiency.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Are Your Drones Safe To Operate?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our drones are operated by AI but can also be manually controlled by humans, with intuitive and easy to pick up and use.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Can Your Drones Operate In All Weather Conditions?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our drones can fly in any weather conditions at any time, with complete functionality.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                What Are The Benefits Of Using AirGuide Drones?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Benefits include reduced congestion, improved safety, enhanced communication, and real-time analytics, leading to more efficient air traffic management.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                How Do I Get In Touch For More Information?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                You can reach us via email at anish.madas.224@k12.friscoisd.org for any inquiries or additional information about our products.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cta-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mb-4 mb-lg-0">
+                            <h2 class="mb-3">Request a personalized consultation</h2>
+                            <p class="lead mb-0">Our aviation experts are ready to discuss your specific needs and challenges.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="#contactForm" class="btn btn-primary btn-lg">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                
+                // Simulate API call delay
+                setTimeout(function() {
+                    // Create success alert
+                    const alertDiv = document.createElement('div');
+                    alertDiv.className = 'alert alert-success mt-3';
+                    alertDiv.role = 'alert';
+                    alertDiv.innerHTML = '<i class="fas fa-check-circle me-2"></i> Thank you for your inquiry! Our team will contact you shortly.';
+                    
+                    // Insert alert before the form
+                    contactForm.parentNode.insertBefore(alertDiv, contactForm);
+                    
+                    // Reset form
+                    contactForm.reset();
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalText;
+                    
+                    // Scroll to alert
+                    alertDiv.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Remove alert after 5 seconds
+                    setTimeout(function() {
+                        alertDiv.remove();
+                    }, 5000);
+                }, 1500);
+            });
+        }
+    });
+</script>
+{% endblock %}

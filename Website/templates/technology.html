@@ -1,0 +1,334 @@
+{% extends 'layout.html' %}
+
+{% block title %}Technology | AirGuide Technologies{% endblock %}
+
+{% block content %}
+<!-- Technology Hero Section -->
+<section class="page-hero technology-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <h1>Our Technology</h1>
+                <p class="lead">Advanced systems working together for safer airports</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="section-intro text-center mb-5">
+                    <h2>Transforming Airport Navigation</h2>
+                    <p class="lead">The Skyeye-1 system combines multiple advanced technologies to create a comprehensive solution for low-visibility airport operations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h3>Central Control System</h3>
+                <p>The heart of our technology is a sophisticated central control system positioned at the top of the air traffic control tower. This system utilizes advanced radar technology to track all aircraft in the vicinity of the airport.</p>
+                <p>The control system constantly monitors aircraft positions and orchestrates the deployment and movement of our drone fleet, ensuring optimal positioning for guidance and emergency response.</p>
+                <p>Key features include:</p>
+                <ul class="feature-list">
+                    <li>Real-time aircraft tracking within a 100-mile radius</li>
+                    <li>Automated drone deployment algorithms</li>
+                    <li>Predictive weather integration</li>
+                    <li>Redundant systems for 99.999% uptime</li>
+                    <li>Seamless integration with existing ATC software</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1690313758173-729edb720708" alt="Control Tower System" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h3>ADS-B Transponder Integration</h3>
+                <p>Automatic Dependent Surveillance-Broadcast (ADS-B) technology forms the backbone of our aircraft tracking system. Each Skyeye-1 drone is equipped with dual ADS-B receivers that can detect and interpret signals from aircraft transponders.</p>
+                <p>This technology allows our drones to precisely locate aircraft in 3D space, even in conditions where visual identification is impossible. The system continuously updates position data at a rate of 10Hz, ensuring highly responsive guidance.</p>
+                <p>Benefits of our ADS-B implementation include:</p>
+                <ul class="feature-list">
+                    <li>Precise aircraft positioning with centimeter-level accuracy</li>
+                    <li>Automatic identification of aircraft type and flight parameters</li>
+                    <li>Seamless operation with both 1090 MHz and 978 MHz frequencies</li>
+                    <li>Compliance with global aviation standards</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="ADS-B Technology" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h3>High-Intensity Beacon System</h3>
+                <p>The Skyeye-1's most visible technology is its proprietary high-intensity beacon light system. This powerful red light is specifically designed to penetrate through fog, rain, snow, and other low-visibility conditions.</p>
+                <p>The beacon employs advanced LED technology with specialized optics that create a light pattern optimized for pilot visibility. The light is calibrated to be highly visible without causing discomfort or distraction to pilots.</p>
+                <p>Technical specifications include:</p>
+                <ul class="feature-list">
+                    <li>360° visibility with focused forward projection</li>
+                    <li>Penetration of up to 5 miles in heavy fog conditions</li>
+                    <li>Pulsing patterns for enhanced visibility</li>
+                    <li>Automatic intensity adjustment based on environmental conditions</li>
+                    <li>Low power consumption for extended operation time</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/skyeye-drone.png') }}" alt="Skyeye-1 Drone with Beacon Light" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h3>Emergency Response Technology</h3>
+                <p>Our emergency response variants of the Skyeye-1 incorporate specialized technology for rapid incident control. These drones feature enhanced batteries, more powerful rotors for increased speed, and a sophisticated fire suppressant delivery system.</p>
+                <p>The emergency response system includes thermal imaging cameras that can identify hotspots and assess the nature of an incident before human responders arrive. This data is transmitted in real-time to emergency services.</p>
+                <p>Key technology components include:</p>
+                <ul class="feature-list">
+                    <li>Compact yet highly effective fire suppressant delivery system</li>
+                    <li>High-definition thermal imaging with automated incident assessment</li>
+                    <li>Enhanced communication systems with direct emergency services integration</li>
+                    <li>Rapid deployment capabilities with &lt;30 second response time</li>
+                    <li>Extended flight time for sustained emergency operations</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44" alt="Emergency Response Technology" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Integration Diagram -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Technology Integration</h2>
+            <p class="lead">How our systems work together seamlessly</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="integration-diagram">
+                    <div class="diagram-container text-center mb-5">
+                        <!-- SVG Diagram -->
+                        <svg width="100%" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background -->
+                            <rect x="0" y="0" width="800" height="400" fill="#f8f9fa" rx="10" ry="10"/>
+                            
+                            <!-- Central System -->
+                            <circle cx="400" cy="200" r="80" fill="#0d6efd" fill-opacity="0.1" stroke="#0d6efd" stroke-width="2"/>
+                            <text x="400" y="200" text-anchor="middle" fill="#0d6efd" font-weight="bold">Central Control System</text>
+                            <text x="400" y="220" text-anchor="middle" fill="#0d6efd" font-size="12">ATC Tower</text>
+                            
+                            <!-- Drone Units -->
+                            <circle cx="200" cy="100" r="60" fill="#dc3545" fill-opacity="0.1" stroke="#dc3545" stroke-width="2"/>
+                            <text x="200" y="95" text-anchor="middle" fill="#dc3545" font-weight="bold">Skyeye-1</text>
+                            <text x="200" y="115" text-anchor="middle" fill="#dc3545" font-size="12">Guidance Drone</text>
+                            
+                            <circle cx="200" cy="300" r="60" fill="#fd7e14" fill-opacity="0.1" stroke="#fd7e14" stroke-width="2"/>
+                            <text x="200" y="295" text-anchor="middle" fill="#fd7e14" font-weight="bold">Skyeye-1</text>
+                            <text x="200" y="315" text-anchor="middle" fill="#fd7e14" font-size="12">Emergency Response</text>
+                            
+                            <!-- Aircraft -->
+                            <circle cx="600" cy="100" r="60" fill="#6c757d" fill-opacity="0.1" stroke="#6c757d" stroke-width="2"/>
+                            <text x="600" y="95" text-anchor="middle" fill="#6c757d" font-weight="bold">Arriving</text>
+                            <text x="600" y="115" text-anchor="middle" fill="#6c757d" font-size="12">Aircraft</text>
+                            
+                            <circle cx="600" cy="300" r="60" fill="#20c997" fill-opacity="0.1" stroke="#20c997" stroke-width="2"/>
+                            <text x="600" y="295" text-anchor="middle" fill="#20c997" font-weight="bold">Human</text>
+                            <text x="600" y="315" text-anchor="middle" fill="#20c997" font-size="12">Supervision Team</text>
+                            
+                            <!-- Connection Lines -->
+                            <line x1="330" y1="170" x2="252" y2="125" stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="280" y="135" text-anchor="middle" fill="#0d6efd" font-size="10">Commands</text>
+                            
+                            <line x1="330" y1="230" x2="252" y2="275" stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="280" y="265" text-anchor="middle" fill="#0d6efd" font-size="10">Deployment</text>
+                            
+                            <line x1="470" y1="170" x2="548" y2="125" stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="520" y="135" text-anchor="middle" fill="#0d6efd" font-size="10">ADS-B Data</text>
+                            
+                            <line x1="470" y1="230" x2="548" y2="275" stroke="#0d6efd" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="520" y="265" text-anchor="middle" fill="#0d6efd" font-size="10">Monitoring</text>
+                            
+                            <line x1="252" y1="125" x2="548" y2="125" stroke="#dc3545" stroke-width="2"/>
+                            <text x="400" y="115" text-anchor="middle" fill="#dc3545" font-size="10">Guidance Light</text>
+                            
+                            <line x1="252" y1="275" x2="548" y2="275" stroke="#fd7e14" stroke-width="2" stroke-dasharray="10,2"/>
+                            <text x="400" y="290" text-anchor="middle" fill="#fd7e14" font-size="10">Emergency Response</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="integration-explanation">
+                        <h4 class="text-center mb-3">System Integration Workflow</h4>
+                        <ol class="integration-steps">
+                            <li>The <strong>Central Control System</strong> monitors all aircraft via radar and ADS-B data.</li>
+                            <li>When an aircraft approaching in low visibility is detected, the system deploys a <strong>Skyeye-1 Guidance Drone</strong>.</li>
+                            <li>Using ADS-B transponder data, the drone positions itself at a safe distance in front of the aircraft.</li>
+                            <li>The <strong>high-intensity beacon</strong> provides visual guidance to pilots, leading them safely to their gate.</li>
+                            <li>The <strong>Human Supervision Team</strong> monitors the entire operation and can intervene if necessary.</li>
+                            <li>In case of emergency, <strong>Emergency Response Drones</strong> are deployed automatically while alerting human responders.</li>
+                        </ol>
+                        <p class="text-center mt-4">This integrated approach ensures seamless operations even in the most challenging visibility conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Innovation Timeline -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Our Technology Journey</h2>
+            <p class="lead">Continuous innovation in airport safety</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-content">
+                            <h4>Concept Development</h4>
+                            <p>Initial research into drone-based guidance systems for low-visibility airport operations begins.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <h4>Prototype Testing</h4>
+                            <p>First Skyeye-1 prototype tested in controlled environment with aviation authorities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2020</div>
+                        <div class="timeline-content">
+                            <h4>ADS-B Integration</h4>
+                            <p>Breakthrough in ADS-B transponder technology allows for precise aircraft tracking and positioning.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-content">
+                            <h4>Beacon Technology Development</h4>
+                            <p>Advanced high-intensity beacon system developed specifically for fog penetration.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h4>First Airport Deployment</h4>
+                            <p>Initial Skyeye-1 system deployed at a major international airport for real-world testing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h4>Emergency Response Variant</h4>
+                            <p>Introduction of specialized emergency response drones with fire suppression capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Today</div>
+                        <div class="timeline-content highlight-timeline">
+                            <h4>Global Expansion</h4>
+                            <p>Skyeye-1 systems now operating at major airports worldwide, with continuous technology improvements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Partners -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Technology Partners</h2>
+            <p class="lead">Collaborating with industry leaders for continuous innovation</p>
+        </div>
+        
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <div class="partners-container">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="partner-card">
+                                <div class="partner-icon">
+                                    <i class="fas fa-plane fa-3x text-primary"></i>
+                                </div>
+                                <h4>Aviation Authorities</h4>
+                                <p>Working closely with FAA, EASA, and other global aviation authorities to ensure compliance and safety.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="partner-card">
+                                <div class="partner-icon">
+                                    <i class="fas fa-microchip fa-3x text-primary"></i>
+                                </div>
+                                <h4>Technology Providers</h4>
+                                <p>Partnerships with leading technology companies for advanced sensors and computing systems.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="partner-card">
+                                <div class="partner-icon">
+                                    <i class="fas fa-university fa-3x text-primary"></i>
+                                </div>
+                                <h4>Research Institutions</h4>
+                                <p>Ongoing research collaborations with aerospace engineering departments at top universities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cta-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mb-4 mb-lg-0">
+                            <h2 class="mb-3">Want to learn more about our technology?</h2>
+                            <p class="lead mb-0">Contact our technical team for detailed specifications and integration information.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="/contact" class="btn btn-primary btn-lg">Get Technical Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

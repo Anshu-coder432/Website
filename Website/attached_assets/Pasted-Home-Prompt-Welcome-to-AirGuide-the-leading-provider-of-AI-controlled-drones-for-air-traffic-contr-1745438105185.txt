@@ -1,0 +1,35 @@
+Home Prompt:
+Welcome to AirGuide, the leading provider of AI-controlled drones for air traffic control. Our cutting-edge technology ensures safer and more efficient air traffic, giving our customers peace of mind and improved operations.
+
+How Does AirGuide Work?
+At AirGuide, we specialize in developing cutting-edge drones equipped with advanced AI technology for air traffic control purposes. Our goal is to completely change the industry by providing efficient and reliable solutions that greatly improve air traffic management. Based in Frisco, TX, our team is dedicated to creating safer and more efficient skies for all.
+
+Drone Traffic Management
+
+We will create an autonomous air traffic drone that can perform the same roles as humans but more efficiently. These drones will be able to significantly increase the safety of airport ground traffic in low visibility operations, as this is when pilots have the most trouble navigating taxiways, especially at larger airports.
+
+A large central piece will be on top of the air traffic control tower, relaying aircraft positions in the airspace via radar. Using Automatic Dependent Surveillance-Broadcast (ADS-B) transponders, the drones will be able to locate and move to specific aircraft around the airport. Using powerful beacon/fog lights, the drones will hover safely in front of the designated aircraft and guide it to the gate, lowering the chance of an incident due to visibility impairment. Emergency response variants of the drone, equipped with higher-capacity batteries, more powerful rotors, and nozzles to spray fire-suppressant foam, will be on standby 24/7 all over the airport. These drones will be deployed when needed, acting as first responders to start controlling the situation, while also notifying air traffic control supervisors and emergency response vehicles. Human intervention is the failsafe. Several supervisors will be on duty, whose responsibility is to ensure there are no issues with the drones themselves. If there is any problem, the aircraft in the area will be instructed to hold in place until the problem is fixed.
+
+
+
+AI Controlled Drones
+
+AI-powered drones are advanced unmanned aerial vehicles (UAVs) that are equipped with artificial intelligence (AI) technology. This cutting-edge combination allows the drones to not only fly all by themselves but also to make smart decisions and adapt to all the weather in the environment. These drones are equipped with various sensors, cameras, and other advanced technology that allow them to gather and process vast amounts of data in real-time. Additionally, they are programmed with complex algorithms that enable them to analyze this data and make decisions based on it.
+
+
+
+About Us
+
+At AirGuide Technologies, our mission is to make air traffic safer, more efficient, and more controlled so that everyone can enjoy the power of air travel to its fullest extent. We specialize in making drones empowered by AI that help control and regulate air traffic far more effectively than humans. We started with nothing but an idea and the basic tools we used to digitally market our plan, but now we have grown into a massive company that is the world's leading producer in these drones. We believe in being as helpful as possible in our mission and want to be as transparent as possible with our customers, people whom we appreciate the most.
+
+
+
+How Do The Drones Work?
+
+Our drones utilize advanced sensors and AI to monitor airspace, optimize routes, and enhance real-time communication between aircraft and control towers.
+
+
+
+What Are The Benefits Of Using AirGuide Drones?
+
+Benefits include reduced congestion, improved safety, enhanced communication, and real-time analytics, leading to more efficient air traffic management.

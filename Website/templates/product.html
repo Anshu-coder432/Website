@@ -1,0 +1,300 @@
+{% extends 'layout.html' %}
+
+{% block title %}AirGuide Drone Systems | AirGuide Technologies{% endblock %}
+
+{% block content %}
+<!-- Product Hero Section -->
+<section class="page-hero product-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <h1>AirGuide Drone Systems</h1>
+                <p class="lead">Cutting-edge technology for safer and more efficient air traffic control</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2>Meet Skyeye-1</h2>
+                <p class="lead mb-4">Our flagship drone system designed specifically for airport navigation in challenging visibility conditions.</p>
+                <p>The Skyeye-1 drone features a distinctive bright red guidance light that provides clear visual cues to pilots during fog, rain, and other low-visibility scenarios. Working in conjunction with airport control systems, Skyeye-1 dramatically reduces the risk of incidents while maintaining efficient traffic flow.</p>
+                <div class="product-highlights mt-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check text-primary"></i>
+                        </div>
+                        <span>Highly visible beacon light system</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check text-primary"></i>
+                        </div>
+                        <span>Integrated ADS-B transponder technology</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check text-primary"></i>
+                        </div>
+                        <span>Precision hover capabilities with redundant systems</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="icon-wrapper-sm me-3">
+                            <i class="fas fa-check text-primary"></i>
+                        </div>
+                        <span>Weather-resistant design for all-condition operation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-image-container">
+                    <img src="{{ url_for('static', filename='images/skyeye-drone.png') }}" alt="Skyeye-1 Drone" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Specifications -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Technical Specifications</h2>
+            <p class="lead">Engineered for performance, reliability and safety</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="specs-container">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="specs-card">
+                                <h4>Physical Specifications</h4>
+                                <ul class="specs-list">
+                                    <li>
+                                        <span class="specs-label">Dimensions:</span>
+                                        <span class="specs-value">24" x 24" x 12" (60cm x 60cm x 30cm)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Weight:</span>
+                                        <span class="specs-value">8.8 lbs (4 kg)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Max Speed:</span>
+                                        <span class="specs-value">45 mph (72 km/h)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Flight Time:</span>
+                                        <span class="specs-value">Up to 2 hours</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Weather Rating:</span>
+                                        <span class="specs-value">IP56 (dust & water resistant)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Operating Temp:</span>
+                                        <span class="specs-value">-20°C to 50°C (-4°F to 122°F)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specs-card">
+                                <h4>Guidance System</h4>
+                                <ul class="specs-list">
+                                    <li>
+                                        <span class="specs-label">Beacon Light:</span>
+                                        <span class="specs-value">360° high-intensity LED (Red)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Visibility:</span>
+                                        <span class="specs-value">5+ miles in heavy fog</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Navigation:</span>
+                                        <span class="specs-value">GPS, GLONASS, Galileo</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Positioning:</span>
+                                        <span class="specs-value">RTK-enhanced, cm-level precision</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Obstacle Avoidance:</span>
+                                        <span class="specs-value">360° LiDAR + vision sensors</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Communication:</span>
+                                        <span class="specs-value">Triple-redundant encrypted link</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specs-card">
+                                <h4>Tracking Technology</h4>
+                                <ul class="specs-list">
+                                    <li>
+                                        <span class="specs-label">ADS-B:</span>
+                                        <span class="specs-value">Dual receiver (1090 MHz & 978 MHz)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Radar Integration:</span>
+                                        <span class="specs-value">Compatible with all major ATC systems</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Detection Range:</span>
+                                        <span class="specs-value">100+ miles for aircraft tracking</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Update Rate:</span>
+                                        <span class="specs-value">10Hz (positions updated every 0.1s)</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Aircraft Recognition:</span>
+                                        <span class="specs-value">Automated identification system</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specs-card">
+                                <h4>Emergency Response Variant</h4>
+                                <ul class="specs-list">
+                                    <li>
+                                        <span class="specs-label">Battery Capacity:</span>
+                                        <span class="specs-value">Enhanced 4-hour operation</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Payload Capacity:</span>
+                                        <span class="specs-value">Up to 5 kg (11 lbs) of fire suppressant</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Deployment Time:</span>
+                                        <span class="specs-value">&lt;30 seconds from alert</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Thermal Imaging:</span>
+                                        <span class="specs-value">High-resolution IR camera</span>
+                                    </li>
+                                    <li>
+                                        <span class="specs-label">Communication:</span>
+                                        <span class="specs-value">Direct link to emergency services</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Variants -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h2>Our Drone Systems</h2>
+            <p class="lead">Specialized solutions for air traffic control and emergency response</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="variant-card">
+                    <div class="variant-image">
+                        <img src="{{ url_for('static', filename='images/skyeye-drone.png') }}" alt="Skyeye-1 Standard" class="img-fluid rounded-top">
+                    </div>
+                    <div class="variant-content">
+                        <h4>Skyeye-1 Standard</h4>
+                        <p>The base model designed for routine guidance operations with our core navigation and beacon technology.</p>
+                        <ul class="variant-features">
+                            <li>Standard 2-hour flight time</li>
+                            <li>High-visibility beacon system</li>
+                            <li>ADS-B integration</li>
+                            <li>Weather-resistant design</li>
+                        </ul>
+                        <a href="/contact" class="btn btn-outline-primary mt-3">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="variant-card highlight-variant">
+                    <div class="variant-badge">Emergency Response</div>
+                    <div class="variant-image">
+                        <img src="{{ url_for('static', filename='img/savior-1.png') }}" alt="Savior-1" class="img-fluid rounded-top">
+                    </div>
+                    <div class="variant-content">
+                        <h4>Savior-1</h4>
+                        <p>Our specialized emergency response drone with enhanced capabilities for critical situations and rapid deployment.</p>
+                        <ul class="variant-features">
+                            <li>4-hour enhanced battery life</li>
+                            <li>Fire suppressant delivery system</li>
+                            <li>Thermal imaging camera</li>
+                            <li>Direct emergency services link</li>
+                        </ul>
+                        <a href="/contact" class="btn btn-outline-primary mt-3">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Customer Testimonial -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="testimonial-large">
+                    <div class="row align-items-center">
+                        <div class="col-md-5 mb-4 mb-md-0">
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1707561524046-f0c766e9850f" alt="Airport Tower" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="testimonial-content">
+                                <div class="quote-icon mb-3">
+                                    <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                </div>
+                                <p class="testimonial-text">"Since implementing the Skyeye-1 system at our airport, we've seen a 78% reduction in low-visibility delays and significantly improved safety metrics. The system integrated seamlessly with our existing infrastructure and has become an essential part of our operations."</p>
+                                <div class="testimonial-author">
+                                    <h5>Robert Keller</h5>
+                                    <p>Director of Operations, Frankfurt International Airport</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cta-card">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 mb-4 mb-lg-0">
+                            <h2 class="mb-3">Ready to enhance your airport operations?</h2>
+                            <p class="lead mb-0">Schedule a consultation with our experts to learn how our drone systems can be customized for your facility.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a href="/contact" class="btn btn-primary btn-lg">Request Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

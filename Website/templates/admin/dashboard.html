@@ -1,0 +1,328 @@
+{% extends 'layout.html' %}
+
+{% block title %}Admin Dashboard | AirGuide Technologies{% endblock %}
+
+{% block content %}
+<!-- Admin Dashboard Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Admin Dashboard</h2>
+                    <a href="{{ url_for('admin_logout') }}" class="btn btn-outline-danger">Logout</a>
+                </div>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <!-- Dashboard Navigation Tabs -->
+                <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="contacts-tab" data-bs-toggle="tab" data-bs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="true">Contact Submissions</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="newsletters-tab" data-bs-toggle="tab" data-bs-target="#newsletters" type="button" role="tab" aria-controls="newsletters" aria-selected="false">Newsletter Subscriptions</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="testimonials-tab" data-bs-toggle="tab" data-bs-target="#testimonials" type="button" role="tab" aria-controls="testimonials" aria-selected="false">Testimonials</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="adminTabsContent">
+                    <!-- Contact Submissions Tab -->
+                    <div class="tab-pane fade show active" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                        <div class="card shadow">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Recent Contact Submissions</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if contact_submissions %}
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Inquiry Type</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for submission in contact_submissions %}
+                                                    <tr>
+                                                        <td>{{ submission.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                                        <td>{{ submission.first_name }} {{ submission.last_name }}</td>
+                                                        <td>{{ submission.email }}</td>
+                                                        <td>{{ submission.inquiry_type }}</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#viewContact{{ submission.id }}">
+                                                                View
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <!-- View Modal -->
+                                                    <div class="modal fade" id="viewContact{{ submission.id }}" tabindex="-1" aria-labelledby="viewContactLabel{{ submission.id }}" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="viewContactLabel{{ submission.id }}">Contact Submission Details</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">First Name:</p>
+                                                                            <p>{{ submission.first_name }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Last Name:</p>
+                                                                            <p>{{ submission.last_name }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Email:</p>
+                                                                            <p>{{ submission.email }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Phone:</p>
+                                                                            <p>{{ submission.phone or 'Not provided' }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Company:</p>
+                                                                            <p>{{ submission.company or 'Not provided' }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Inquiry Type:</p>
+                                                                            <p>{{ submission.inquiry_type }}</p>
+                                                                        </div>
+                                                                        <div class="col-12 mb-3">
+                                                                            <p class="mb-1 fw-bold">Message:</p>
+                                                                            <p>{{ submission.message }}</p>
+                                                                        </div>
+                                                                        <div class="col-12 mb-3">
+                                                                            <p class="mb-1 fw-bold">Submission Date:</p>
+                                                                            <p>{{ submission.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                {% else %}
+                                    <p class="text-center py-3">No contact submissions yet.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Subscriptions Tab -->
+                    <div class="tab-pane fade" id="newsletters" role="tabpanel" aria-labelledby="newsletters-tab">
+                        <div class="card shadow">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Newsletter Subscriptions</h5>
+                            </div>
+                            <div class="card-body">
+                                {% if newsletter_subscriptions %}
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Email</th>
+                                                    <th>Name</th>
+                                                    <th>Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for subscription in newsletter_subscriptions %}
+                                                    <tr>
+                                                        <td>{{ subscription.subscribed_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                                                        <td>{{ subscription.email }}</td>
+                                                        <td>{{ subscription.name or 'Not provided' }}</td>
+                                                        <td>
+                                                            {% if subscription.is_active %}
+                                                                <span class="badge bg-success">Active</span>
+                                                            {% else %}
+                                                                <span class="badge bg-secondary">Inactive</span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            <form method="POST" action="{{ url_for('admin_toggle_subscription', subscription_id=subscription.id) }}" class="d-inline">
+                                                                {% if subscription.is_active %}
+                                                                    <button type="submit" class="btn btn-sm btn-warning">Deactivate</button>
+                                                                {% else %}
+                                                                    <button type="submit" class="btn btn-sm btn-success">Activate</button>
+                                                                {% endif %}
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                {% else %}
+                                    <p class="text-center py-3">No newsletter subscriptions yet.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonials Tab -->
+                    <div class="tab-pane fade" id="testimonials" role="tabpanel" aria-labelledby="testimonials-tab">
+                        <div class="card shadow">
+                            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Testimonials</h5>
+                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addTestimonialModal">
+                                    Add New Testimonial
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                {% if testimonials %}
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Name</th>
+                                                    <th>Position</th>
+                                                    <th>Featured</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for testimonial in testimonials %}
+                                                    <tr>
+                                                        <td>{{ testimonial.created_at.strftime('%Y-%m-%d') }}</td>
+                                                        <td>{{ testimonial.name }}</td>
+                                                        <td>{{ testimonial.position }}, {{ testimonial.company }}</td>
+                                                        <td>
+                                                            {% if testimonial.is_featured %}
+                                                                <span class="badge bg-primary">Featured</span>
+                                                            {% else %}
+                                                                <span class="badge bg-secondary">Not Featured</span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#viewTestimonial{{ testimonial.id }}">
+                                                                View
+                                                            </button>
+                                                            <form method="POST" action="{{ url_for('admin_toggle_testimonial_feature', testimonial_id=testimonial.id) }}" class="d-inline">
+                                                                {% if testimonial.is_featured %}
+                                                                    <button type="submit" class="btn btn-sm btn-warning">Unfeature</button>
+                                                                {% else %}
+                                                                    <button type="submit" class="btn btn-sm btn-success">Feature</button>
+                                                                {% endif %}
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    <!-- View Modal -->
+                                                    <div class="modal fade" id="viewTestimonial{{ testimonial.id }}" tabindex="-1" aria-labelledby="viewTestimonialLabel{{ testimonial.id }}" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="viewTestimonialLabel{{ testimonial.id }}">Testimonial Details</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Name:</p>
+                                                                            <p>{{ testimonial.name }}</p>
+                                                                        </div>
+                                                                        <div class="col-md-6 mb-3">
+                                                                            <p class="mb-1 fw-bold">Position:</p>
+                                                                            <p>{{ testimonial.position }}</p>
+                                                                        </div>
+                                                                        <div class="col-12 mb-3">
+                                                                            <p class="mb-1 fw-bold">Company:</p>
+                                                                            <p>{{ testimonial.company }}</p>
+                                                                        </div>
+                                                                        <div class="col-12 mb-3">
+                                                                            <p class="mb-1 fw-bold">Testimonial:</p>
+                                                                            <p>{{ testimonial.testimonial_text }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                {% else %}
+                                    <p class="text-center py-3">No testimonials added yet.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Testimonial Modal -->
+<div class="modal fade" id="addTestimonialModal" tabindex="-1" aria-labelledby="addTestimonialModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTestimonialModalLabel">Add New Testimonial</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="POST" action="{{ url_for('admin_add_testimonial') }}">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="position" class="form-label">Position</label>
+                        <input type="text" class="form-control" id="position" name="position" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="company" name="company" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="testimonial_text" class="form-label">Testimonial</label>
+                        <textarea class="form-control" id="testimonial_text" name="testimonial_text" rows="5" required></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="is_featured" name="is_featured">
+                        <label class="form-check-label" for="is_featured">
+                            Feature this testimonial on homepage
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Testimonial</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
